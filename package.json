@@ -1,0 +1,27 @@
+{
+  "name": "@mokahr/benchmark-webpack-plugin",
+  "version": "1.0.0",
+  "description": "A webpack plugin used to collect benchmark data",
+  "main": "BenchmarkWebpackPlugin.js",
+  "scripts": {
+    "release": "sh ./release.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southerncross/benchmark-webpack-plugin.git"
+  },
+  "author": "lishunyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/southerncross/benchmark-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/southerncross/benchmark-webpack-plugin#readme",
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "@types/superagent": "^4.1.8",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "superagent": "^5.3.1"
+  }
+}
