@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var os = require("os");
+var path = require("path");
 var superagent = require("superagent");
 var API_ENTRY = 'https://benchmark.lishunyang.com/api.json';
 var BenchmarkWebpackPlugin = (function () {
@@ -91,7 +92,7 @@ var BenchmarkWebpackPlugin = (function () {
     BenchmarkWebpackPlugin.prototype.getProjectName = function (compiler) {
         var DEFAULT_NAME = 'unknown';
         try {
-            return compiler.inputFileSystem.readFileSync('./package.json').toString().match(/"name": "(.*)",\n/)[1] || DEFAULT_NAME;
+            return compiler.inputFileSystem.readFileSync(path.join('./', 'package.json')).toString().match(/"name": "(.*)",\n/)[1] || DEFAULT_NAME;
         }
         catch (e) {
             return DEFAULT_NAME;
