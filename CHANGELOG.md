@@ -2,6 +2,10 @@ Changelog
 =========
 Notable changes to this project will be documented.
 
+## 1.0.5
+
+Publish to npm
+
 ## 1.0.4
 
 Update README.md
