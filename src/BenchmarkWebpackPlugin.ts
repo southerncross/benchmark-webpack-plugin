@@ -1,4 +1,5 @@
 import * as os from 'os';
+import * as path from 'path';
 import * as superagent from 'superagent';
 
 const API_ENTRY = 'https://benchmark.lishunyang.com/api.json';
@@ -13,7 +14,7 @@ class BenchmarkWebpackPlugin {
   getProjectName(compiler: any) {
     const DEFAULT_NAME = 'unknown';
     try {
-      return compiler.inputFileSystem.readFileSync('./package.json').toString().match(/"name": "(.*)",\n/)[1] || DEFAULT_NAME;
+      return compiler.inputFileSystem.readFileSync(path.join('./', 'package.json')).toString().match(/"name": "(.*)",\n/)[1] || DEFAULT_NAME;
     } catch (e) {
       return DEFAULT_NAME;
     }
