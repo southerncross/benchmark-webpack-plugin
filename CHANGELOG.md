@@ -2,6 +2,10 @@ Changelog
 =========
 Notable changes to this project will be documented.
 
+## 1.0.3
+
+Fix the bug that can not read project name on Windows
+
 ## 1.0.2
 
 Clean up release branch
