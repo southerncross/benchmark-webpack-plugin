@@ -14,7 +14,7 @@ npm i --save-dev @moka-fe/benchmark-webpack-plugin
 2. Modify webpack config
 
 ```js
-const BenchmarkWebpackPlugin = require('moka-fe/benchmark-webpack-plugin');
+const BenchmarkWebpackPlugin = require('@moka-fe/benchmark-webpack-plugin');
 
 ...
 
