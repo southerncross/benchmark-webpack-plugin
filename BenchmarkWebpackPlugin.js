@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var os = require("os");
 var path = require("path");
+var childProcess = require("child_process");
 var superagent = require("superagent");
 var API_ENTRY = 'https://benchmark.lishunyang.com/api.json';
 var BenchmarkWebpackPlugin = (function () {
@@ -61,7 +62,7 @@ var BenchmarkWebpackPlugin = (function () {
                                 bundleSize += asset.size;
                             }
                             body = {
-                                username: os.userInfo().username,
+                                username: this.getUserName(),
                                 platform: os.platform(),
                                 cpu: os.cpus()[0].model.trim(),
                                 memory: (os.totalmem() / 1024 / 1024).toFixed(1),
@@ -96,6 +97,14 @@ var BenchmarkWebpackPlugin = (function () {
         }
         catch (e) {
             return DEFAULT_NAME;
+        }
+    };
+    BenchmarkWebpackPlugin.prototype.getUserName = function () {
+        try {
+            return childProcess.execSync('git config user.name', { encoding: 'utf-8' });
+        }
+        catch (e) {
+            return os.userInfo().username;
         }
     };
     return BenchmarkWebpackPlugin;
