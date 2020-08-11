@@ -1,5 +1,6 @@
 import * as os from 'os';
 import * as path from 'path';
+import * as childProcess from 'child_process';
 import * as superagent from 'superagent';
 
 const API_ENTRY = 'https://benchmark.lishunyang.com/api.json';
@@ -20,6 +21,14 @@ class BenchmarkWebpackPlugin {
     }
   }
 
+  getUserName() {
+    try {
+      return childProcess.execSync('git config user.name', { encoding: 'utf-8' });
+    } catch (e) {
+      return os.userInfo().username;
+    }
+  }
+
   apply = (compiler: any) => {
     compiler.plugin('done', async (stats: any) => {
       if (!this.isInitial) {
@@ -33,7 +42,7 @@ class BenchmarkWebpackPlugin {
         }
 
         const body = {
-          username: os.userInfo().username,
+          username: this.getUserName(),
           platform: os.platform(),
           cpu: os.cpus()[0].model.trim(),
           memory: (os.totalmem() / 1024 / 1024).toFixed(1),
