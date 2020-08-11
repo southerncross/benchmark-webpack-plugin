@@ -2,6 +2,10 @@ Changelog
 =========
 Notable changes to this project will be documented.
 
+## 1.0.7
+
+Use git username as default username
+
 ## 1.0.6
 
 Fix readme
