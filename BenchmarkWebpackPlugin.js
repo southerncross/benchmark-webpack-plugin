@@ -53,6 +53,9 @@ var BenchmarkWebpackPlugin = (function () {
                             if (!this.isInitial) {
                                 return [2];
                             }
+                            else {
+                                this.isInitial = false;
+                            }
                             _b.label = 1;
                         case 1:
                             _b.trys.push([1, 4, , 5]);
@@ -81,9 +84,7 @@ var BenchmarkWebpackPlugin = (function () {
                             e_1 = _b.sent();
                             console.log(e_1);
                             return [3, 5];
-                        case 5:
-                            this.isInitial = false;
-                            return [2];
+                        case 5: return [2];
                     }
                 });
             }); });
