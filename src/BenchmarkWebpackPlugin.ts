@@ -33,6 +33,8 @@ class BenchmarkWebpackPlugin {
     compiler.plugin('done', async (stats: any) => {
       if (!this.isInitial) {
         return;
+      } else {
+        this.isInitial = false;
       }
 
       try {
@@ -56,8 +58,6 @@ class BenchmarkWebpackPlugin {
       } catch (e) {
         console.log(e);
       }
-
-      this.isInitial = false;
     });
   }
 }
