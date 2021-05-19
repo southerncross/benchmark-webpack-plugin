@@ -1,6 +1,6 @@
 {
   "name": "@moka-fe/benchmark-webpack-plugin",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A webpack plugin used to collect benchmark data",
   "main": "BenchmarkWebpackPlugin.js",
   "scripts": {
