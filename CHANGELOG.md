@@ -2,6 +2,10 @@ Changelog
 =========
 Notable changes to this project will be documented.
 
+## 1.0.9
+
+Fix inaccurate compile time
+
 ## 1.0.7
 
 Use git username as default username
